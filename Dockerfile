@@ -39,7 +39,7 @@ COPY --from=flatbuffer_build /usr/local/include/flatbuffers /usr/local/include/f
 COPY --from=flatbuffer_build /usr/local/lib/libflatbuffers.a /usr/local/lib/libflatbuffers.a
 COPY --from=flatbuffer_build /usr/local/lib/cmake/flatbuffers /usr/local/lib/cmake/flatbuffers
 
-RUN apt-get update && apt-get install -y cmake \
+RUN apt-get update && apt-get install -y cmake clang\
     && flatc --version
 
 
